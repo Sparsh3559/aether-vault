@@ -1,0 +1,57 @@
+/* ═══════════════════════════════════════
+   AETHER VAULT — BACKGROUND.CSS
+   ═══════════════════════════════════════ */
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 80% 10%, rgba(0,212,255,.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(240,185,11,.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* Grid lines */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,212,255,.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,.02) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Floating coin images — pure CSS fallback circles */
+.coin-bg {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.03;
+  animation: float-coin 24s ease-in-out infinite;
+}
+.coin-bg.c1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, #f7931a, transparent);
+  top: -150px; right: -100px;
+  animation-duration: 22s;
+}
+.coin-bg.c2 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, #627eea, transparent);
+  left: -100px; top: 30%;
+  animation-duration: 30s;
+  animation-delay: -8s;
+}
+.coin-bg.c3 {
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, #9945ff, transparent);
+  right: 20%; bottom: 10%;
+  animation-duration: 26s;
+  animation-delay: -14s;
+}

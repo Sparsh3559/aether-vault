@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AETHER VAULT | Crypto Calculator, Portfolio Tracker & Bitcoin Intelligence Platform</title>
+<meta name="description" content="Free institutional-grade crypto dashboard. Bitcoin profit calculator, portfolio tracker, coin converter, capital gains tax calculator, and mining profitability calculator. Real-time prices powered by CoinGecko."/>
+<meta name="keywords" content="crypto profit calculator, bitcoin portfolio tracker, cryptocurrency converter, crypto tax calculator, mining profitability calculator, bitcoin price, ethereum price, crypto ROI calculator"/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#050508"/>
+<link rel="icon" type="image/png" href="assets/images/favicon.png"/>
+<link rel="apple-touch-icon" href="assets/images/favicon.png"/>
+<link rel="canonical" href="https://yourdomain.com"/>
+<meta property="og:title" content="AETHER VAULT | Institutional Crypto Intelligence"/>
+<meta property="og:description" content="Real-time crypto calculators, portfolio tracker, tax estimator and mining profitability — all free, no signup."/>
+<meta property="og:image" content="assets/images/og-image.jpg"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://yourdomain.com"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="AETHER VAULT | Crypto Intelligence"/>
+<meta name="twitter:description" content="Free crypto profit calculator, portfolio tracker, tax calculator and mining profitability."/>
+<link rel="manifest" href="manifest.json"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/main.css"/>
+<link rel="stylesheet" href="assets/css/background.css"/>
+<link rel="stylesheet" href="assets/css/animations.css"/>
+<link rel="stylesheet" href="assets/css/responsive.css"/>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"AETHER VAULT",
+  "description":"Institutional-grade cryptocurrency intelligence platform with profit calculators, portfolio tracker, tax estimator and mining calculator.",
+  "applicationCategory":"FinanceApplication",
+  "operatingSystem":"All",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "url":"https://yourdomain.com"
+}
+</script>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+  <div class="nav-logo">AETHER<span class="logo-dot">.</span>VAULT</div>
+  <div class="nav-links">
+    <a class="nav-link" href="#dashboard">Dashboard</a>
+    <a class="nav-link" href="#profit">Profit Sim</a>
+    <a class="nav-link" href="#portfolio">Portfolio</a>
+    <a class="nav-link" href="#converter">Converter</a>
+    <a class="nav-link" href="#tax">Tax Calc</a>
+    <a class="nav-link" href="#mining">Mining</a>
+    <a class="nav-link" href="#sentiment">AI Sentiment</a>
+  </div>
+  <div class="nav-right">
+    <span class="live-dot"></span>
+    <button class="wallet-btn">CONNECT WALLET</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="dashboard">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">⬡ INSTITUTIONAL ACCESS V2.4 ACTIVE</div>
+    <h1>The Ultimate All-In-One<br/><span class="hero-accent">Crypto Intelligence</span> Platform</h1>
+    <p class="hero-sub">Engineered for high-frequency trading, real-time portfolio orchestration, and absolute digital sovereignty. Track, calculate, and manage assets with mathematical precision.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="smoothScroll('#profit')">⚡ LAUNCH TERMINAL</button>
+      <button class="btn-outline" onclick="smoothScroll('#converter')">↗ VIEW LIVE MARKETS</button>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-row">
+  <div class="stat-card reveal">
+    <div class="stat-label">TOTAL MARKET CAP</div>
+    <div class="stat-value" id="s-mcap">$--</div>
+    <div class="stat-change" id="s-mcap-c">-- --</div>
+  </div>
+  <div class="stat-card reveal">
+    <div class="stat-label">BTC DOMINANCE</div>
+    <div class="stat-value" id="s-dom">--%</div>
+    <div class="stat-sub" id="s-dom-label">STABLE</div>
+  </div>
+  <div class="stat-card reveal">
+    <div class="stat-label">FEAR &amp; GREED</div>
+    <div class="stat-value" id="s-fg">--</div>
+    <div class="stat-sub gold" id="s-fg-label">LOADING...</div>
+  </div>
+  <div class="stat-card reveal">
+    <div class="stat-label">24H VOLUME</div>
+    <div class="stat-value" id="s-vol">$--</div>
+    <div class="stat-change" id="s-vol-c">-- --</div>
+  </div>
+</section>
+
+<!-- AD LEADERBOARD 1 -->
+<div class="ad-zone">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PROFIT SIMULATOR -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="tool-section" id="profit">
+  <div class="section-header">
+    <div>
+      <div class="section-title">📈 PROFIT SIMULATOR</div>
+      <div class="section-sub">Calculate potential returns on your next trade</div>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card reveal">
+      <div class="card-label">INPUT PARAMETERS</div>
+      <div class="input-group">
+        <label class="input-label" for="ps-coin">ASSET</label>
+        <select class="input-field" id="ps-coin">
+          <option value="bitcoin">Bitcoin (BTC)</option>
+          <option value="ethereum">Ethereum (ETH)</option>
+          <option value="solana">Solana (SOL)</option>
+          <option value="binancecoin">BNB</option>
+          <option value="ripple">XRP</option>
+          <option value="cardano">Cardano (ADA)</option>
+          <option value="dogecoin">Dogecoin (DOGE)</option>
+          <option value="avalanche-2">Avalanche (AVAX)</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label class="input-label" for="ps-amount">INVESTMENT AMOUNT (USD)</label>
+        <input class="input-field" type="number" id="ps-amount" value="1000"/>
+      </div>
+      <div class="two-col">
+        <div class="input-group">
+          <label class="input-label" for="ps-buy">BUY PRICE (USD)</label>
+          <input class="input-field" type="number" id="ps-buy" placeholder="Auto-fill"/>
+        </div>
+        <div class="input-group">
+          <label class="input-label" for="ps-target">TARGET PRICE (USD)</label>
+          <input class="input-field" type="number" id="ps-target" placeholder="Target"/>
+        </div>
+      </div>
+      <button class="calc-btn" onclick="calcProfit()">CALCULATE ROI</button>
+    </div>
+    <div class="card reveal">
+      <div class="card-label">PROJECTED RESULTS</div>
+      <div class="result-big positive" id="ps-result">$0.00</div>
+      <div class="two-col" style="margin-bottom:20px;">
+        <div><div class="mini-label">ROI</div><div class="mini-val" id="ps-roi">0%</div></div>
+        <div><div class="mini-label">TOTAL VALUE</div><div class="mini-val" id="ps-total">$0.00</div></div>
+      </div>
+      <div class="grid-3">
+        <div class="scenario-card"><div class="sc-label">2× SCENARIO</div><div class="sc-val" id="sc2x">--</div><div class="sc-roi">+100% ROI</div></div>
+        <div class="scenario-card"><div class="sc-label">5× SCENARIO</div><div class="sc-val" id="sc5x">--</div><div class="sc-roi">+400% ROI</div></div>
+        <div class="scenario-card"><div class="sc-label">10× SCENARIO</div><div class="sc-val" id="sc10x">--</div><div class="sc-roi">+900% ROI</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEO COLLAPSIBLE -->
+  <div class="seo-block">
+    <button class="seo-toggle" onclick="toggleSEO('seo-profit')">📖 Learn More About Profit Simulation &amp; ROI <span class="toggle-icon">▼</span></button>
+    <div class="seo-content" id="seo-profit">
+      <div class="seo-grid">
+        <div class="seo-card">
+          <h3>What is ROI in Crypto?</h3>
+          <p>Return on Investment (ROI) measures the percentage gain or loss relative to your initial investment. In crypto, ROI is calculated as: <strong>(Exit Price − Entry Price) ÷ Entry Price × 100</strong>. A 100% ROI means you doubled your money. Crypto assets are known for delivering extreme ROI in both directions — Bitcoin has returned over 1,000,000% since 2010, while altcoins can lose 90%+ in bear markets.</p>
+        </div>
+        <div class="seo-card">
+          <h3>Entry Price &amp; Exit Price</h3>
+          <p>Your <strong>entry price</strong> is the price at which you purchase a cryptocurrency. Your <strong>exit price</strong> is the price at which you sell. The difference between these two prices, multiplied by your coin quantity, determines your raw profit or loss. Smart traders set exit targets before entering a position to remove emotional decision-making from the equation.</p>
+        </div>
+        <div class="seo-card">
+          <h3>Crypto Volatility</h3>
+          <p>Cryptocurrency is the most volatile asset class in existence. Bitcoin can move 10-20% in a single day. Altcoins regularly swing 50-80% in weeks. This volatility creates both extreme opportunity and extreme risk. Our profit simulator lets you model multiple scenarios — 2x, 5x, and 10x — so you can plan for different volatility outcomes before investing.</p>
+        </div>
+        <div class="seo-card">
+          <h3>Profit Scenarios Explained</h3>
+          <p>A <strong>2x scenario</strong> means the asset doubles in price. A <strong>5x scenario</strong> means it grows 5 times your buy price. A <strong>10x scenario</strong> (a "10-bagger") is a high-conviction bet common in early-stage altcoins. Use our simulator to understand exactly how much USD profit each scenario generates based on your specific investment amount and entry price.</p>
+        </div>
+      </div>
+      <div class="faq-block">
+        <h3>Frequently Asked Questions — Crypto Profit Calculator</h3>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">How do I calculate crypto profit? <span>▼</span></button><div class="faq-a">Enter your investment amount, buy price, and target (exit) price. The calculator computes how many coins you can buy at entry, then multiplies by (exit − entry) to show profit. Our tool also shows ROI percentage and total portfolio value at exit.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">What is a good ROI for crypto? <span>▼</span></button><div class="faq-a">In traditional investing, 10% annual return is considered excellent. In crypto, many investors target 50-200% per cycle. Bitcoin has historically returned 100-300% during bull markets. However, past performance never guarantees future results.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">Does this calculator account for fees? <span>▼</span></button><div class="faq-a">Our basic simulator shows gross profit. For net profit, subtract exchange trading fees (typically 0.1-0.5%) and any withdrawal fees. For tax-adjusted profit, use our Tax Calculator below.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PORTFOLIO TRACKER -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="tool-section alt-bg" id="portfolio">
+  <div class="section-header">
+    <div>
+      <div class="section-title">◎ PORTFOLIO TRACKER</div>
+      <div class="section-sub">Real-time asset distribution and performance</div>
+    </div>
+    <button class="add-btn" onclick="togglePortForm()">+ ADD COIN</button>
+  </div>
+  <div id="port-form-wrap" style="display:none;margin-bottom:20px;">
+    <div class="port-form">
+      <div class="input-group" style="margin:0;"><label class="input-label" for="pf-coin">COIN</label>
+        <select class="input-field" id="pf-coin">
+          <option value="bitcoin">Bitcoin (BTC)</option>
+          <option value="ethereum">Ethereum (ETH)</option>
+          <option value="solana">Solana (SOL)</option>
+          <option value="binancecoin">BNB</option>
+          <option value="ripple">XRP</option>
+          <option value="cardano">Cardano (ADA)</option>
+          <option value="dogecoin">Dogecoin (DOGE)</option>
+          <option value="avalanche-2">AVAX</option>
+        </select>
+      </div>
+      <div class="input-group" style="margin:0;"><label class="input-label" for="pf-amount">AMOUNT</label><input class="input-field" type="number" id="pf-amount" placeholder="0.5"/></div>
+      <div class="input-group" style="margin:0;"><label class="input-label" for="pf-buy">AVG BUY PRICE (USD)</label><input class="input-field" type="number" id="pf-buy" placeholder="40000"/></div>
+      <button class="calc-btn" style="margin:0;" onclick="addCoin()">ADD</button>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card reveal">
+      <table class="port-table" id="port-table">
+        <thead><tr><th>ASSET</th><th>BALANCE</th><th>AVG BUY</th><th>VALUE</th><th>P/L %</th><th></th></tr></thead>
+        <tbody id="port-body"><tr><td colspan="6" class="empty-state">Add coins to track your portfolio</td></tr></tbody>
+      </table>
+    </div>
+    <div class="card reveal">
+      <div class="card-label">ALLOCATION</div>
+      <div class="total-val" id="port-total">$0.00</div>
+      <div class="total-change" id="port-change">+$0.00 (0%)</div>
+      <div id="port-alloc"></div>
+    </div>
+  </div>
+
+  <!-- SEO COLLAPSIBLE -->
+  <div class="seo-block">
+    <button class="seo-toggle" onclick="toggleSEO('seo-portfolio')">📖 Learn More About Portfolio Tracking &amp; Asset Management <span class="toggle-icon">▼</span></button>
+    <div class="seo-content" id="seo-portfolio">
+      <div class="seo-grid">
+        <div class="seo-card">
+          <h3>What is Portfolio Allocation?</h3>
+          <p><strong>Portfolio allocation</strong> refers to how your total investment is distributed across different cryptocurrencies. A well-allocated crypto portfolio might hold 50-60% in Bitcoin as a stable core, 20-30% in Ethereum and large-cap altcoins, and 10-20% in high-risk, high-reward small-caps. Our tracker visualizes your exact allocation so you can see imbalances at a glance.</p>
+        </div>
+        <div class="seo-card">
+          <h3>Crypto Diversification Strategy</h3>
+          <p><strong>Diversification</strong> means spreading investments to reduce risk. In crypto, this means holding assets with different use cases — Layer 1 blockchains (BTC, ETH, SOL), DeFi tokens, gaming tokens, and stablecoins. However, crypto assets are highly correlated — when Bitcoin drops, altcoins typically drop harder. True diversification in crypto also means holding some traditional assets.</p>
+        </div>
+        <div class="seo-card">
+          <h3>Understanding Portfolio Risk</h3>
+          <p><strong>Portfolio risk</strong> in crypto comes from price volatility, liquidity risk, regulatory risk, and concentration risk. Holding 80%+ in a single altcoin is extremely high risk. Our tracker shows your P&amp;L (profit and loss) in real-time so you always know your current risk exposure. A healthy portfolio balances potential upside with manageable downside.</p>
+        </div>
+        <div class="seo-card">
+          <h3>Active vs Passive Asset Management</h3>
+          <p><strong>Active management</strong> involves frequent trading to outperform the market. <strong>Passive management</strong> (also called HODLing) means buying and holding long-term regardless of price swings. Research consistently shows that long-term Bitcoin holders have outperformed active traders over 4+ year cycles. Our portfolio tracker supports both strategies with real-time P&amp;L tracking.</p>
+        </div>
+      </div>
+      <div class="faq-block">
+        <h3>Frequently Asked Questions — Crypto Portfolio Tracker</h3>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">How do I track my crypto portfolio? <span>▼</span></button><div class="faq-a">Add each coin you hold, your quantity, and your average purchase price. Our tracker fetches live prices from CoinGecko and automatically calculates your current value, profit/loss, and portfolio allocation breakdown.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">What percentage of my portfolio should be Bitcoin? <span>▼</span></button><div class="faq-a">Most financial advisors suggest 50-70% BTC allocation for conservative crypto investors. Aggressive investors may hold more altcoins, but this increases volatility significantly. Your allocation should match your personal risk tolerance and investment timeline.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">Is crypto portfolio tracking free? <span>▼</span></button><div class="faq-a">Yes — our portfolio tracker is completely free with no account required. Your data stays in your browser session. For permanent tracking across devices, consider exporting your holdings periodically.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- CONVERTER -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="tool-section" id="converter">
+  <div class="section-header">
+    <div>
+      <div class="section-title">⇄ INSTITUTIONAL CONVERTER</div>
+      <div class="section-sub">Instantly compare asset pairs with live market rates</div>
+    </div>
+  </div>
+  <div style="max-width:640px;margin:0 auto;">
+    <div class="converter-wrap">
+      <div class="converter-box">
+        <label class="conv-label" for="cv-amount">FROM</label>
+        <input type="number" id="cv-amount" value="1" oninput="convert()"/>
+        <label class="sr-only" for="cv-from">From currency</label>
+        <select id="cv-from" onchange="convert()">
+          <option value="bitcoin">BTC</option>
+          <option value="ethereum">ETH</option>
+          <option value="solana">SOL</option>
+          <option value="binancecoin">BNB</option>
+          <option value="ripple">XRP</option>
+          <option value="tether">USDT</option>
+        </select>
+      </div>
+      <button class="swap-btn" onclick="swapConverter()">⇄</button>
+      <div class="converter-box">
+        <label class="conv-label" for="cv-to">TO</label>
+        <div class="conv-result" id="cv-result" aria-live="polite">--</div>
+        <select id="cv-to" onchange="convert()">
+          <option value="usd">USD</option>
+          <option value="ethereum">ETH</option>
+          <option value="bitcoin">BTC</option>
+          <option value="solana">SOL</option>
+          <option value="binancecoin">BNB</option>
+        </select>
+      </div>
+    </div>
+    <div class="rate-bar" id="cv-rate">Loading live rates...</div>
+  </div>
+  <div class="grid-4" id="quick-pairs" style="margin-top:24px;"></div>
+
+  <!-- SEO COLLAPSIBLE -->
+  <div class="seo-block">
+    <button class="seo-toggle" onclick="toggleSEO('seo-converter')">📖 Learn More About Crypto Conversion &amp; Exchange Rates <span class="toggle-icon">▼</span></button>
+    <div class="seo-content" id="seo-converter">
+      <div class="seo-grid">
+        <div class="seo-card">
+          <h3>How Crypto Exchange Rates Work</h3>
+          <p>Cryptocurrency exchange rates are determined by supply and demand on global exchanges like Binance, Coinbase, and Kraken. Unlike fiat currencies, crypto rates update every second based on live order book activity. Our converter pulls real-time mid-market rates from CoinGecko, which aggregates data from hundreds of exchanges to give you the most accurate conversion rate available.</p>
+        </div>
+        <div class="seo-card">
+          <h3>Live Crypto Conversions</h3>
+          <p><strong>Live conversions</strong> reflect the current market mid-price without any exchange markup. When you actually trade on an exchange, you'll pay a spread (difference between buy and sell price) plus a trading fee of 0.1-0.5%. For large transactions, also consider slippage — large orders can move the market price against you. Our converter shows you the ideal rate as a starting benchmark.</p>
+        </div>
+        <div class="seo-card">
+          <h3>Crypto vs Fiat Comparison</h3>
+          <p>Comparing cryptocurrency to fiat currency (USD, EUR, GBP) helps investors understand real-world purchasing power. Bitcoin at $64,000 means 1 BTC buys $64,000 worth of goods and services. When comparing crypto-to-crypto (BTC to ETH), you're tracking the relative performance of two assets — if BTC/ETH ratio rises, Bitcoin is outperforming Ethereum in that period.</p>
+        </div>
+        <div class="seo-card">
+          <h3>Cross-Chain Asset Conversion</h3>
+          <p>Converting between cryptocurrencies on different blockchains (e.g., BTC to SOL) requires a centralized exchange or a cross-chain bridge. Our converter shows the <strong>equivalent value</strong> in real-time so you can make informed decisions before executing trades. Always compare rates across multiple exchanges before converting large amounts.</p>
+        </div>
+      </div>
+      <div class="faq-block">
+        <h3>Frequently Asked Questions — Crypto Converter</h3>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">How accurate is this crypto converter? <span>▼</span></button><div class="faq-a">Our converter uses CoinGecko's aggregated price data, which reflects the global market average across hundreds of exchanges. Prices update every 60 seconds. For real-time trading, always verify on your specific exchange as rates vary slightly.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">What is the best way to convert cryptocurrency? <span>▼</span></button><div class="faq-a">For small amounts, centralized exchanges (Coinbase, Binance) offer the easiest conversion. For crypto-to-crypto without KYC, decentralized exchanges (Uniswap, Jupiter) allow direct wallet-to-wallet swaps. Always check fees — some platforms charge 1-3% on conversions hidden in the spread.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AD LEADERBOARD 2 -->
+<div class="ad-zone alt-bg">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- TAX CALCULATOR -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="tool-section alt-bg" id="tax">
+  <div class="section-header">
+    <div>
+      <div class="section-title">⚖ TAX PROTOCOL</div>
+      <div class="section-sub">Institutional-grade tax forecasting for high-net-worth positions</div>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card reveal">
+      <div class="card-label">INPUT PARAMETERS</div>
+      <div class="input-group">
+        <label class="input-label" for="tx-country">TAX JURISDICTION</label>
+        <select class="input-field" id="tx-country">
+          <option value="us">United States (IRS)</option>
+          <option value="uk">United Kingdom (HMRC)</option>
+          <option value="in">India (30% flat)</option>
+          <option value="au">Australia (ATO)</option>
+          <option value="de">Germany</option>
+          <option value="ca">Canada (CRA)</option>
+          <option value="sg">Singapore (Tax Free)</option>
+        </select>
+      </div>
+      <div class="two-col">
+        <div class="input-group">
+          <label class="input-label" for="tx-gains">GROSS GAINS (USD)</label>
+          <input class="input-field" type="number" id="tx-gains" value="50000"/>
+        </div>
+        <div class="input-group">
+          <label class="input-label" for="tx-deduct">DEDUCTIONS (USD)</label>
+          <input class="input-field" type="number" id="tx-deduct" value="0"/>
+        </div>
+      </div>
+      <div class="input-group">
+        <label class="input-label" for="tx-period">HOLDING PERIOD</label>
+        <select class="input-field" id="tx-period">
+          <option value="short">Short Term (&lt;1 Year)</option>
+          <option value="long">Long Term (&gt;1 Year)</option>
+        </select>
+      </div>
+      <button class="calc-btn" onclick="calcTax()">CALCULATE TAX LIABILITY</button>
+    </div>
+    <div class="card reveal">
+      <div class="card-label">ESTIMATED TAX LIABILITY</div>
+      <div class="tax-big" id="tx-liability">$0.00</div>
+      <div class="result-row"><span class="rl">Effective Tax Rate</span><span class="rv" id="tx-rate">0%</span></div>
+      <div class="result-row"><span class="rl">Net Profit (Post-Tax)</span><span class="rv pos" id="tx-net">$0.00</span></div>
+      <div class="result-row"><span class="rl">Short Term Surcharge</span><span class="rv neg" id="tx-surcharge">$0.00</span></div>
+      <div class="tax-bar"><div class="tax-fill" id="tx-bar" style="width:0%"></div></div>
+      <p class="disclaimer">⚠ For informational purposes only. Consult a qualified tax professional. Laws vary by region.</p>
+    </div>
+  </div>
+
+  <!-- SEO COLLAPSIBLE -->
+  <div class="seo-block">
+    <button class="seo-toggle" onclick="toggleSEO('seo-tax')">📖 Learn More About Crypto Capital Gains Tax <span class="toggle-icon">▼</span></button>
+    <div class="seo-content" id="seo-tax">
+      <div class="seo-grid">
+        <div class="seo-card">
+          <h3>What Are Crypto Capital Gains?</h3>
+          <p><strong>Capital gains</strong> occur when you sell a cryptocurrency for more than you paid. If you bought Bitcoin at $30,000 and sold at $60,000, your capital gain is $30,000. This gain is taxable in most countries. Capital losses (selling below purchase price) can often offset gains to reduce your tax bill — a strategy called <strong>tax-loss harvesting</strong>.</p>
+        </div>
+        <div class="seo-card">
+          <h3>Short-Term vs Long-Term Tax Rates</h3>
+          <p>In the US, crypto held <strong>under 1 year</strong> is taxed as ordinary income (up to 37%). Crypto held <strong>over 1 year</strong> qualifies for long-term capital gains rates (0%, 15%, or 20% depending on income). This difference can save you tens of thousands of dollars. In India, all crypto gains are taxed at a flat 30% regardless of holding period.</p>
+        </div>
+        <div class="seo-card">
+          <h3>Crypto Tax Estimation</h3>
+          <p>Accurate crypto tax estimation requires knowing your cost basis (purchase price), sale price, holding period, and applicable tax rate in your jurisdiction. Our calculator provides a fast estimate based on these inputs. For complex portfolios with hundreds of transactions, professional crypto tax software like Koinly or CoinLedger is recommended for filing.</p>
+        </div>
+        <div class="seo-card">
+          <h3>Crypto Tax by Country</h3>
+          <p>Tax treatment varies dramatically: <strong>US</strong> — treated as property, capital gains tax applies. <strong>UK</strong> — capital gains tax up to 20%. <strong>India</strong> — flat 30% on all gains, no loss offsetting allowed. <strong>Germany</strong> — crypto held over 1 year is completely tax-free. <strong>Singapore</strong> — no capital gains tax at all. Always verify current rules with a local tax professional.</p>
+        </div>
+      </div>
+      <div class="faq-block">
+        <h3>Frequently Asked Questions — Crypto Tax Calculator</h3>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">Do I have to pay tax on crypto? <span>▼</span></button><div class="faq-a">In most countries, yes. The US, UK, Australia, Canada, and India all tax cryptocurrency gains. Germany is a notable exception — crypto held over 1 year is tax-free. Singapore has no capital gains tax. Always check your local tax authority's current guidelines.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">What triggers a crypto taxable event? <span>▼</span></button><div class="faq-a">Common taxable events include: selling crypto for fiat, trading one crypto for another, using crypto to buy goods/services, and receiving crypto as income. Simply holding crypto (HODLing) is NOT a taxable event in most jurisdictions.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">Can I reduce my crypto taxes legally? <span>▼</span></button><div class="faq-a">Yes — legal strategies include: holding over 1 year for long-term rates, tax-loss harvesting (selling losing positions to offset gains), gifting crypto (within limits), and using tax-advantaged accounts where available. Always consult a qualified tax professional before implementing any strategy.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- MINING CALCULATOR -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="tool-section" id="mining">
+  <div class="section-header">
+    <div>
+      <div class="section-title">⛏ MINING PROFITABILITY MATRIX</div>
+      <div class="section-sub">Calculate hardware ROI with real-time network difficulty</div>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card reveal">
+      <div class="card-label">HARDWARE CONFIGURATION</div>
+      <div class="input-group">
+        <label class="input-label" for="mn-coin">TARGET COIN</label>
+        <select class="input-field" id="mn-coin">
+          <option value="bitcoin">Bitcoin (BTC) — SHA-256</option>
+          <option value="ethereum-classic">Ethereum Classic (ETC)</option>
+          <option value="litecoin">Litecoin (LTC)</option>
+          <option value="monero">Monero (XMR)</option>
+        </select>
+      </div>
+      <div class="two-col">
+        <div class="input-group">
+          <label class="input-label" for="mn-hash">HASHRATE (TH/s)</label>
+          <input class="input-field" type="number" id="mn-hash" value="140"/>
+        </div>
+        <div class="input-group">
+          <label class="input-label" for="mn-power">POWER (WATTS)</label>
+          <input class="input-field" type="number" id="mn-power" value="3250"/>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="input-group">
+          <label class="input-label" for="mn-elec">ELECTRICITY ($/kWh)</label>
+          <input class="input-field" type="number" id="mn-elec" value="0.10" step="0.01"/>
+        </div>
+        <div class="input-group">
+          <label class="input-label" for="mn-hw">HARDWARE COST (USD)</label>
+          <input class="input-field" type="number" id="mn-hw" value="8500"/>
+        </div>
+      </div>
+      <button class="calc-btn" onclick="calcMining()">CALCULATE PROFITABILITY</button>
+    </div>
+    <div class="card reveal">
+      <div class="mining-grid">
+        <div class="mine-card"><div class="mine-period">1 HOUR</div><div class="mine-val" id="mn-1h">$--</div></div>
+        <div class="mine-card"><div class="mine-period">1 DAY</div><div class="mine-val" id="mn-1d">$--</div></div>
+        <div class="mine-card"><div class="mine-period">1 WEEK</div><div class="mine-val" id="mn-1w">$--</div></div>
+        <div class="mine-card"><div class="mine-period">1 MONTH</div><div class="mine-val" id="mn-1m">$--</div></div>
+        <div class="mine-card"><div class="mine-period">1 YEAR</div><div class="mine-val" id="mn-1y">$--</div></div>
+        <div class="mine-card"><div class="mine-period">BREAK EVEN</div><div class="mine-val gold" id="mn-be">-- days</div></div>
+      </div>
+      <div class="result-row" style="margin-top:16px;"><span class="rl">Daily Power Cost</span><span class="rv neg" id="mn-pcost">$--</span></div>
+      <div class="result-row"><span class="rl">Projected Annual ROI</span><span class="rv pos" id="mn-roi">--%</span></div>
+    </div>
+  </div>
+
+  <!-- SEO COLLAPSIBLE -->
+  <div class="seo-block">
+    <button class="seo-toggle" onclick="toggleSEO('seo-mining')">📖 Learn More About Crypto Mining Profitability <span class="toggle-icon">▼</span></button>
+    <div class="seo-content" id="seo-mining">
+      <div class="seo-grid">
+        <div class="seo-card">
+          <h3>What is Hashrate?</h3>
+          <p><strong>Hashrate</strong> is the computational power your mining hardware contributes to the network. It's measured in hashes per second — TH/s (terahashes), PH/s (petahashes), or EH/s (exahashes) for Bitcoin. A higher hashrate means more attempts to solve the cryptographic puzzle per second, which translates directly to a higher share of block rewards. Modern Bitcoin ASICs like the Antminer S21 Pro deliver 234 TH/s.</p>
+        </div>
+        <div class="seo-card">
+          <h3>Electricity Costs &amp; Mining Profitability</h3>
+          <p><strong>Electricity cost</strong> is the single biggest factor in mining profitability. At $0.10/kWh, a 3,250W miner costs $7.80/day to run. At $0.05/kWh (industrial rate), it costs only $3.90/day — nearly doubling your profit margin. Professional mining farms in Kazakhstan, Iceland, and parts of the US operate at $0.03-0.06/kWh. Residential miners at $0.15+/kWh often struggle to profit.</p>
+        </div>
+        <div class="seo-card">
+          <h3>Mining ROI Explained</h3>
+          <p><strong>Mining ROI</strong> measures how long it takes to recover your hardware investment from mining profits. With a $8,500 ASIC generating $25/day net profit, break-even is 340 days. ROI is heavily influenced by Bitcoin price (higher price = more revenue), network difficulty (more miners = harder puzzles = less reward per miner), and halving events that cut block rewards in half every 4 years.</p>
+        </div>
+        <div class="seo-card">
+          <h3>ASIC Mining vs GPU Mining</h3>
+          <p><strong>ASIC miners</strong> (Application-Specific Integrated Circuits) are custom chips built exclusively for mining specific algorithms. They dominate Bitcoin, Litecoin, and Dash mining with unmatched efficiency. <strong>GPU miners</strong> use graphics cards and work on algorithms like Ethash (ETC) and RandomX (XMR). ASICs are more profitable for supported coins but GPU rigs offer flexibility to switch coins based on profitability.</p>
+        </div>
+      </div>
+      <div class="faq-block">
+        <h3>Frequently Asked Questions — Mining Calculator</h3>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">Is Bitcoin mining still profitable in 2026? <span>▼</span></button><div class="faq-a">Bitcoin mining profitability in 2026 depends heavily on electricity costs, hardware efficiency, and Bitcoin's price. After the 2024 halving reduced block rewards to 3.125 BTC, only miners with access to cheap electricity ($0.05/kWh or less) and latest-generation ASICs consistently profit. Use our calculator with your specific inputs to find out.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">What is network difficulty in mining? <span>▼</span></button><div class="faq-a">Network difficulty is an automatic adjustment that keeps Bitcoin block times at approximately 10 minutes. When more miners join the network, difficulty increases — each miner earns a smaller share. When miners leave, difficulty decreases. Our calculator uses current network difficulty estimates for the most accurate profitability projection.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">How much can I make mining Bitcoin per day? <span>▼</span></button><div class="faq-a">Daily mining revenue depends on your hashrate, electricity costs, and current Bitcoin price. A 140 TH/s ASIC at $0.10/kWh generates approximately $15-30/day gross revenue at current Bitcoin prices (May 2026), with net profit after electricity of $5-20/day. Enter your exact specs above for a personalized estimate.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- AI SENTIMENT -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="tool-section alt-bg" id="sentiment">
+  <div class="section-header">
+    <div>
+      <div class="section-title">🧠 AI SENTIMENT ENGINE</div>
+      <div class="section-sub">Real-time market psychology and fear/greed analysis</div>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card reveal" style="text-align:center;">
+      <div class="card-label">FEAR &amp; GREED INDEX</div>
+      <div class="gauge-num" id="fg-num">--</div>
+      <div class="gauge-label" id="fg-label">LOADING...</div>
+      <div class="gauge-bar"><div class="gauge-needle" id="fg-needle" style="left:50%"></div></div>
+      <div class="gauge-ends"><span>EXTREME FEAR</span><span>EXTREME GREED</span></div>
+      <p class="sentiment-desc" id="fg-desc">Fetching market sentiment data...</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-label">MARKET INTELLIGENCE</div>
+      <div class="result-row"><span class="rl">Yesterday</span><span class="rv" id="fg-yesterday">--</span></div>
+      <div class="result-row"><span class="rl">Last Week</span><span class="rv" id="fg-week">--</span></div>
+      <div class="result-row"><span class="rl">Last Month</span><span class="rv" id="fg-month">--</span></div>
+      <div class="result-row"><span class="rl">Signal</span><span class="rv gold" id="fg-signal">ANALYZING...</span></div>
+      <div class="ai-box">
+        <div class="ai-label">AI ANALYSIS</div>
+        <p id="ai-analysis">Loading market analysis...</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AD LEADERBOARD 3 -->
+<div class="ad-zone">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">AETHER.VAULT</div>
+      <p class="footer-tag">The definitive intelligence platform for institutional-grade cryptocurrency management and financial simulation.</p>
+    </div>
+    <div class="footer-col">
+      <h4>TOOLS</h4>
+      <a href="#profit">Profit Simulator</a>
+      <a href="#portfolio">Portfolio Tracker</a>
+      <a href="#converter">Coin Converter</a>
+      <a href="#tax">Tax Calculator</a>
+      <a href="#mining">Mining Calculator</a>
+    </div>
+    <div class="footer-col">
+      <h4>RESOURCES</h4>
+      <a href="#profit">What is ROI?</a>
+      <a href="#portfolio">Portfolio Strategy</a>
+      <a href="#tax">Crypto Tax Guide</a>
+      <a href="#mining">Mining Guide 2026</a>
+    </div>
+    <div class="footer-col">
+      <h4>SYSTEM STATUS</h4>
+      <div class="status-row"><span>Global API</span><span class="green">99.9% UP</span></div>
+      <div class="status-row"><span>Data Latency</span><span class="green">14ms</span></div>
+      <div class="status-row"><span>Vault Security</span><span class="blue">ENCRYPTED</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 AETHER VAULT. ALL RIGHTS RESERVED.</span>
+    <div class="footer-status"><span class="live-dot"></span><span>CONNECTED VIA TLS_AES_256_GCM</span></div>
+  </div>
+</footer>
+
+<script src="assets/js/api.js"></script>
+<script src="assets/js/profit.js"></script>
+<script src="assets/js/portfolio.js"></script>
+<script src="assets/js/converter.js"></script>
+<script src="assets/js/tax.js"></script>
+<script src="assets/js/mining.js"></script>
+<script src="assets/js/sentiment.js"></script>
+<script src="assets/js/seo.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

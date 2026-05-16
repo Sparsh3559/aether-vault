@@ -1,0 +1,41 @@
+/* ═══════════════════════════════════════
+   AETHER VAULT — RESPONSIVE.CSS
+   ═══════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  .tool-section { padding: 48px 32px; }
+  footer { padding: 40px 32px 24px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .seo-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .navbar { padding: 0 16px; }
+  .nav-links { display: none; }
+  .hero { padding: 60px 20px 48px; }
+  .tool-section { padding: 40px 20px; }
+  footer { padding: 32px 20px 20px; }
+
+  .stats-row { grid-template-columns: 1fr 1fr; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: 1fr 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  .seo-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .mining-grid { grid-template-columns: 1fr 1fr; }
+  .port-form { grid-template-columns: 1fr 1fr; }
+  .converter-wrap { flex-direction: column; }
+  .swap-btn { transform: rotate(90deg); }
+
+  .ad-zone { padding: 16px 20px; }
+}
+
+@media (max-width: 480px) {
+  .stats-row { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: 1fr; }
+  .port-form { grid-template-columns: 1fr; }
+  .mining-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 28px; }
+  .gauge-num { font-size: 48px; }
+}
