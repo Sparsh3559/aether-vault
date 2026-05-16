@@ -9,6 +9,21 @@ const AetherAPI = (() => {
 
   const COIN_IDS = 'bitcoin,ethereum,solana,binancecoin,ripple,cardano,dogecoin,avalanche-2,litecoin,monero,ethereum-classic,tether,usd-coin';
 
+  const isLocal =
+    location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+
+  const endpoints = isLocal
+    ? {
+        prices: `https://api.coingecko.com/api/v3/simple/price?ids=${COIN_IDS}&vs_currencies=usd&include_24hr_change=true&include_market_cap=true&include_24hr_vol=true`,
+        global: 'https://api.coingecko.com/api/v3/global',
+        feargreed: 'https://api.alternative.me/fng/?limit=30',
+      }
+    : {
+        prices: '/api/prices',
+        global: '/api/global',
+        feargreed: '/api/fear-greed',
+      };
+
   async function fetchWithCache(key, url) {
     const now = Date.now();
     if (cache[key] && (now - cache[key].ts) < CACHE_TTL) {
@@ -27,24 +42,15 @@ const AetherAPI = (() => {
   }
 
   async function getPrices() {
-    return fetchWithCache(
-      'prices',
-      `https://api.coingecko.com/api/v3/simple/price?ids=${COIN_IDS}&vs_currencies=usd&include_24hr_change=true&include_market_cap=true&include_24hr_vol=true`
-    );
+    return fetchWithCache('prices', endpoints.prices);
   }
 
   async function getGlobal() {
-    return fetchWithCache(
-      'global',
-      'https://api.coingecko.com/api/v3/global'
-    );
+    return fetchWithCache('global', endpoints.global);
   }
 
   async function getFearGreed() {
-    return fetchWithCache(
-      'feargreed',
-      'https://api.alternative.me/fng/?limit=30'
-    );
+    return fetchWithCache('feargreed', endpoints.feargreed);
   }
 
   return { getPrices, getGlobal, getFearGreed };
