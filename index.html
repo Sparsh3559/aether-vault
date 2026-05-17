@@ -38,6 +38,32 @@
   "url":"https://yourdomain.com"
 }
 </script>
+
+<!-- ── NEW: Inline styles for BTC widget, toast, modal ── -->
+<style>
+/* NAV BTC WIDGET */
+.nav-btc-widget{display:flex;align-items:center;gap:8px;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.15);padding:6px 14px;border-radius:3px;cursor:default;}
+.nav-btc-label{font-family:'Space Mono',monospace;font-size:10px;color:#5a6278;letter-spacing:2px;}
+.nav-btc-price{font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#f0b90b;min-width:90px;}
+.nav-btc-change{font-family:'Space Mono',monospace;font-size:11px;color:#00ff88;}
+/* TOAST */
+.toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);background:rgba(0,212,255,.12);border:1px solid #00d4ff;color:#00d4ff;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:1px;padding:12px 28px;border-radius:3px;z-index:9999;opacity:0;pointer-events:none;transition:all .3s ease;white-space:nowrap;backdrop-filter:blur(12px);}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);z-index:9000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
+.modal-overlay.show{opacity:1;pointer-events:all;}
+.modal-box{background:#111318;border:1px solid #252830;border-top:2px solid #00d4ff;border-radius:6px;padding:40px;max-width:480px;width:90%;text-align:center;position:relative;transform:translateY(20px);transition:transform .3s;box-shadow:0 0 60px rgba(0,212,255,.1);}
+.modal-overlay.show .modal-box{transform:translateY(0);}
+.modal-close{position:absolute;top:16px;right:20px;background:none;border:none;color:#5a6278;font-size:22px;cursor:pointer;line-height:1;transition:color .2s;}
+.modal-close:hover{color:#e8eaf0;}
+.modal-icon{font-size:40px;margin-bottom:16px;}
+.modal-title{font-family:'Orbitron',sans-serif;font-size:16px;font-weight:700;letter-spacing:3px;color:#00d4ff;margin-bottom:16px;}
+.modal-body{font-family:'Space Mono',monospace;font-size:12px;color:#9ba3b8;line-height:1.9;margin-bottom:28px;}
+.modal-body strong{color:#f0b90b;}
+.modal-btn{font-family:'Space Mono',monospace;font-size:11px;background:#00d4ff;color:#000;border:none;padding:12px 32px;border-radius:3px;cursor:pointer;font-weight:700;letter-spacing:2px;transition:all .2s;}
+.modal-btn:hover{box-shadow:0 0 20px rgba(0,212,255,.4);}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+</style>
 </head>
 <body>
 
@@ -46,7 +72,7 @@
   <div class="ticker-track" id="tickerTrack"></div>
 </div>
 
-<!-- NAV -->
+<!-- NAV — CONNECT WALLET removed, replaced with live BTC widget -->
 <nav class="navbar" id="navbar">
   <div class="nav-logo">AETHER<span class="logo-dot">.</span>VAULT</div>
   <div class="nav-links">
@@ -60,11 +86,29 @@
   </div>
   <div class="nav-right">
     <span class="live-dot"></span>
-    <button class="wallet-btn">CONNECT WALLET</button>
+    <div class="nav-btc-widget">
+      <span class="nav-btc-label">BTC</span>
+      <span class="nav-btc-price" id="nav-btc-price">$--</span>
+      <span class="nav-btc-change" id="nav-btc-change">--</span>
+    </div>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- TOAST NOTIFICATION -->
+<div class="toast" id="toast"></div>
+
+<!-- MODAL OVERLAY -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div class="modal-icon" id="modalIcon">⚡</div>
+    <div class="modal-title" id="modalTitle">TERMINAL ACTIVE</div>
+    <div class="modal-body" id="modalBody"></div>
+    <button class="modal-btn" id="modalBtn" onclick="closeModal()">GOT IT</button>
+  </div>
+</div>
+
+<!-- HERO — buttons now call launchTerminal() and viewMarkets() -->
 <section class="hero" id="dashboard">
   <div class="hero-bg-grid"></div>
   <div class="hero-content">
@@ -72,8 +116,8 @@
     <h1>The Ultimate All-In-One<br/><span class="hero-accent">Crypto Intelligence</span> Platform</h1>
     <p class="hero-sub">Engineered for high-frequency trading, real-time portfolio orchestration, and absolute digital sovereignty. Track, calculate, and manage assets with mathematical precision.</p>
     <div class="hero-btns">
-      <button class="btn-primary" onclick="smoothScroll('#profit')">⚡ LAUNCH TERMINAL</button>
-      <button class="btn-outline" onclick="smoothScroll('#converter')">↗ VIEW LIVE MARKETS</button>
+      <button class="btn-primary" onclick="launchTerminal()">⚡ LAUNCH TERMINAL</button>
+      <button class="btn-outline" onclick="viewMarkets()">↗ VIEW LIVE MARKETS</button>
     </div>
   </div>
 </section>
