@@ -1,7 +1,7 @@
 {
   "name": "CryptoCalcX",
   "short_name": "CryptoCalcX",
-  "description": "Institutional-grade crypto intelligence dashboard",
+  "description": "Free crypto profit calculator, portfolio tracker, tax & mining tools",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#050508",

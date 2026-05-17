@@ -129,7 +129,7 @@ function launchTerminal() {
   // Scroll to profit section
   document.querySelector('#profit').scrollIntoView({ behavior: 'smooth' });
   // Show toast after short delay
-  setTimeout(() => showToast('⚡ TERMINAL ACTIVE — All tools loaded with live data'), 600);
+  setTimeout(() => showToast('⚡ CryptoCalcX — Live calculators ready'), 600);
 }
 
 function viewMarkets() {
