@@ -1,10 +1,10 @@
 /* ═══════════════════════════════════════
-   AETHER VAULT — SENTIMENT.JS
+   CRYPTOCALCX — SENTIMENT.JS
    ═══════════════════════════════════════ */
 
 async function loadSentiment() {
   try {
-    const data = await AetherAPI.getFearGreed();
+    const data = await CryptoCalcxAPI.getFearGreed();
     const arr  = data?.data || [];
     if (!arr.length) return;
 

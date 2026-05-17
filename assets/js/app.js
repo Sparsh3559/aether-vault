@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════
-   AETHER VAULT — APP.JS
+   CRYPTOCALCX — APP.JS
    Main orchestrator
    ═══════════════════════════════════════ */
 
@@ -173,8 +173,8 @@ function viewMarkets() {
 // ── MAIN REFRESH ──────────────────────────
 async function refresh() {
   const [prices, globalData] = await Promise.all([
-    AetherAPI.getPrices(),
-    AetherAPI.getGlobal(),
+    CryptoCalcxAPI.getPrices(),
+    CryptoCalcxAPI.getGlobal(),
   ]);
 
   if (!prices) return;

@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════
-   AETHER VAULT — SEO.JS
+   CRYPTOCALCX — SEO.JS
    Collapsible SEO sections + FAQ
    ═══════════════════════════════════════ */
 

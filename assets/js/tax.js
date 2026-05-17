@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════
-   AETHER VAULT — TAX.JS
+   CRYPTOCALCX — TAX.JS
    ═══════════════════════════════════════ */
 
 const TAX_RATES = {

@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════
-   AETHER VAULT — MINING.JS
+   CRYPTOCALCX — MINING.JS
    ═══════════════════════════════════════ */
 
 function calcMining() {

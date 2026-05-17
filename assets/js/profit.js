@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════
-   AETHER VAULT — PROFIT.JS
+   CRYPTOCALCX — PROFIT.JS
    ═══════════════════════════════════════ */
 
 function calcProfit() {

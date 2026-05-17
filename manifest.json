@@ -1,6 +1,6 @@
 {
-  "name": "AETHER VAULT",
-  "short_name": "AETHER",
+  "name": "CryptoCalcX",
+  "short_name": "CryptoCalcX",
   "description": "Institutional-grade crypto intelligence dashboard",
   "start_url": "/",
   "display": "standalone",

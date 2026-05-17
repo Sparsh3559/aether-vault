@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════
-   AETHER VAULT — CONVERTER.JS
+   CRYPTOCALCX — CONVERTER.JS
    ═══════════════════════════════════════ */
 
 function convert() {

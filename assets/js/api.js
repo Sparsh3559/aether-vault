@@ -1,9 +1,9 @@
 /* ═══════════════════════════════════════
-   AETHER VAULT — API.JS
+   CRYPTOCALCX — API.JS
    Centralized, cached price fetching
    ═══════════════════════════════════════ */
 
-const AetherAPI = (() => {
+const CryptoCalcxAPI = (() => {
   const CACHE_TTL = 60000; // 1 minute
   const cache = {};
 
@@ -36,7 +36,7 @@ const AetherAPI = (() => {
       cache[key] = { data, ts: now };
       return data;
     } catch (err) {
-      console.warn(`[AetherAPI] ${key} fetch failed:`, err.message);
+      console.warn(`[CryptoCalcxAPI] ${key} fetch failed:`, err.message);
       return cache[key]?.data || null;
     }
   }

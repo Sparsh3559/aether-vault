@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════
-   AETHER VAULT — PORTFOLIO.JS
+   CRYPTOCALCX — PORTFOLIO.JS
    ═══════════════════════════════════════ */
 
 let portfolio = [];
