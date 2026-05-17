@@ -56,7 +56,7 @@ Cost: ~$10-15/year
 4. Netlify auto-adds SSL certificate (HTTPS) for free
 
 ### Step 4 — Update sitemap.xml
-Replace `https://yourdomain.com` with your actual domain in `sitemap.xml`
+Production URL: `https://cryptocalcx.vercel.app` (update `sitemap.xml` if you add a custom domain)
 
 ### Step 5 — Apply for Google AdSense
 1. Go to **adsense.google.com**
@@ -103,7 +103,7 @@ Add in `<head>` of index.html:
 1. Go to **search.google.com/search-console**
 2. Add your domain property
 3. Verify ownership via Netlify DNS record
-4. Submit your sitemap URL: `https://yourdomain.com/sitemap.xml`
+4. Submit your sitemap URL: `https://cryptocalcx.vercel.app/sitemap.xml`
 
 ---
 

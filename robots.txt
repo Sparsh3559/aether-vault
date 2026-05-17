@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aether-vault-live.vercel.app/sitemap.xml
+Sitemap: https://cryptocalcx.vercel.app/sitemap.xml
