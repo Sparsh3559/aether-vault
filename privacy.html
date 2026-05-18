@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Privacy Policy | CRYPTOCALCX Crypto Intelligence Platform</title>
+<meta name="description" content="Privacy Policy for CRYPTOCALCX — Learn how we handle your data, use cookies, and integrate third-party services including Google AdSense and CoinGecko API."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://cryptocalcx.vercel.app/privacy.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#050508;--bg2:#0a0b10;--card:#111318;--border:#1e2028;
+  --blue:#00d4ff;--gold:#f0b90b;--green:#00ff88;--red:#ff3b3b;
+  --text:#e8eaf0;--text2:#9ba3b8;--text3:#5a6278;
+  --mono:'Space Mono',monospace;--head:'Orbitron',sans-serif;--body:'Rajdhani',sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.7;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-thumb{background:var(--blue);border-radius:2px;}
+
+/* NAV */
+nav{background:rgba(5,5,8,.97);border-bottom:1px solid var(--border);padding:0 60px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:999;}
+.nav-logo{font-family:var(--head);font-size:16px;font-weight:900;color:var(--gold);letter-spacing:2px;text-decoration:none;}
+.nav-logo span{color:var(--blue);}
+.nav-back{font-family:var(--mono);font-size:11px;color:var(--text2);text-decoration:none;border:1px solid var(--border);padding:7px 16px;border-radius:3px;transition:all .2s;letter-spacing:1px;}
+.nav-back:hover{color:var(--blue);border-color:var(--blue);}
+
+/* HERO */
+.page-hero{padding:64px 60px 48px;border-bottom:1px solid var(--border);background:radial-gradient(ellipse at 50% 0%,rgba(0,212,255,.05) 0%,transparent 70%);}
+.page-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.2);padding:5px 14px;border-radius:2px;font-family:var(--mono);font-size:10px;color:var(--blue);letter-spacing:2px;margin-bottom:20px;}
+.page-hero h1{font-family:var(--head);font-size:clamp(24px,3vw,40px);font-weight:900;color:var(--text);margin-bottom:12px;}
+.page-hero h1 span{color:var(--blue);}
+.page-meta{font-family:var(--mono);font-size:11px;color:var(--text3);letter-spacing:1px;}
+
+/* CONTENT */
+.content-wrap{max-width:860px;margin:0 auto;padding:60px;}
+.section-block{margin-bottom:48px;}
+.section-block h2{font-family:var(--head);font-size:14px;font-weight:700;color:var(--gold);letter-spacing:2px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.section-block h3{font-family:var(--mono);font-size:12px;color:var(--blue);letter-spacing:1px;margin:20px 0 8px;}
+.section-block p{color:var(--text2);font-size:16px;line-height:1.8;margin-bottom:14px;}
+.section-block ul{color:var(--text2);font-size:16px;line-height:1.8;padding-left:20px;margin-bottom:14px;}
+.section-block ul li{margin-bottom:8px;}
+.section-block strong{color:var(--text);}
+.section-block a{color:var(--blue);text-decoration:none;}
+.section-block a:hover{text-decoration:underline;}
+
+/* INFO BOX */
+.info-box{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--blue);padding:20px 24px;border-radius:3px;margin-bottom:20px;}
+.info-box p{margin:0;font-size:15px;}
+.warn-box{background:rgba(240,185,11,.05);border:1px solid rgba(240,185,11,.2);border-left:3px solid var(--gold);padding:20px 24px;border-radius:3px;margin-bottom:20px;}
+.warn-box p{margin:0;font-size:15px;color:var(--text2);}
+
+/* TABLE */
+.data-table{width:100%;border-collapse:collapse;margin-bottom:20px;font-size:14px;}
+.data-table th{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:2px;text-align:left;padding:10px 14px;border-bottom:1px solid var(--border);background:var(--bg2);}
+.data-table td{padding:12px 14px;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;}
+.data-table tr:last-child td{border-bottom:none;}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:32px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:var(--head);font-size:14px;color:var(--gold);letter-spacing:2px;}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{font-family:var(--mono);font-size:11px;color:var(--text3);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:var(--blue);}
+.footer-copy{font-family:var(--mono);font-size:10px;color:var(--text3);}
+
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  .page-hero{padding:40px 20px 32px;}
+  .content-wrap{padding:32px 20px;}
+  footer{padding:24px 20px;flex-direction:column;align-items:flex-start;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">CRYPTO<span>.</span>CALCX</a>
+  <a class="nav-back" href="index.html">← BACK TO DASHBOARD</a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-badge">⬡ LEGAL DOCUMENT</div>
+  <h1>Privacy <span>Policy</span></h1>
+  <div class="page-meta">Last Updated: May 2026 &nbsp;|&nbsp; Effective Date: May 2026 &nbsp;|&nbsp; Jurisdiction: Global</div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="info-box">
+    <p>This Privacy Policy explains how <strong>CRYPTOCALCX</strong> ("we", "us", or "our") collects, uses, and protects information when you use our website at <strong>cryptocalcx.com</strong>. By using our website, you agree to the practices described in this policy. If you do not agree, please discontinue use of the site.</p>
+  </div>
+
+  <!-- 1. WHO WE ARE -->
+  <div class="section-block">
+    <h2>1. WHO WE ARE</h2>
+    <p>AETHER VAULT is a free cryptocurrency intelligence platform providing real-time crypto calculators, portfolio tracking tools, coin converters, tax estimators, and mining profitability calculators. We are not a financial institution, investment advisor, or cryptocurrency exchange. All tools are provided for informational and educational purposes only.</p>
+    <p>For privacy-related inquiries, contact us at: <a href="mailto:privacy@yourdomain.com">privacy@yourdomain.com</a></p>
+  </div>
+
+  <!-- 2. INFORMATION WE COLLECT -->
+  <div class="section-block">
+    <h2>2. INFORMATION WE COLLECT</h2>
+    <h3>2.1 Information You Provide</h3>
+    <p>AETHER VAULT does <strong>not</strong> require account registration or login. We do not collect your name, email address, or any personal identification information directly. Any data you enter into our calculators (investment amounts, portfolio holdings, etc.) is processed entirely in your browser and is never transmitted to our servers.</p>
+
+    <h3>2.2 Information Collected Automatically</h3>
+    <p>When you visit our website, certain technical information may be collected automatically, including:</p>
+    <ul>
+      <li><strong>IP Address</strong> — used for security, fraud prevention, and geographic analytics</li>
+      <li><strong>Browser Type and Version</strong> — used to optimize site performance</li>
+      <li><strong>Operating System</strong> — used to ensure compatibility</li>
+      <li><strong>Pages Visited and Time Spent</strong> — used to understand user behaviour and improve tools</li>
+      <li><strong>Referring URL</strong> — used to understand traffic sources</li>
+      <li><strong>Device Type</strong> — mobile, tablet, or desktop</li>
+    </ul>
+    <p>This data is collected through cookies and analytics tools described below.</p>
+
+    <h3>2.3 Cookies</h3>
+    <p>We use cookies — small text files stored in your browser — to improve your experience. Types of cookies used:</p>
+    <table class="data-table">
+      <thead><tr><th>COOKIE TYPE</th><th>PURPOSE</th><th>DURATION</th></tr></thead>
+      <tbody>
+        <tr><td>Essential</td><td>Required for basic site functionality</td><td>Session</td></tr>
+        <tr><td>Analytics (Google)</td><td>Understanding traffic and usage patterns</td><td>Up to 2 years</td></tr>
+        <tr><td>Advertising (AdSense)</td><td>Displaying relevant advertisements</td><td>Up to 13 months</td></tr>
+        <tr><td>Preference</td><td>Remembering your settings and preferences</td><td>Up to 1 year</td></tr>
+      </tbody>
+    </table>
+    <p>You can control cookie preferences through your browser settings. Disabling cookies may limit some functionality of the site.</p>
+  </div>
+
+  <!-- 3. HOW WE USE YOUR INFORMATION -->
+  <div class="section-block">
+    <h2>3. HOW WE USE YOUR INFORMATION</h2>
+    <p>We use the information collected to:</p>
+    <ul>
+      <li>Operate and maintain the AETHER VAULT platform</li>
+      <li>Improve tool accuracy, performance, and user experience</li>
+      <li>Analyse traffic patterns and popular features</li>
+      <li>Display relevant advertisements through Google AdSense</li>
+      <li>Detect and prevent fraudulent or malicious activity</li>
+      <li>Comply with applicable laws and regulations</li>
+    </ul>
+    <p>We do <strong>not</strong> sell, trade, or rent your personal information to third parties for marketing purposes.</p>
+  </div>
+
+  <!-- 4. GOOGLE ADSENSE -->
+  <div class="section-block">
+    <h2>4. GOOGLE ADSENSE &amp; ADVERTISING</h2>
+    <p>AETHER VAULT uses <strong>Google AdSense</strong> to display advertisements. Google AdSense uses cookies and web beacons to serve ads based on your prior visits to our website and other websites on the internet.</p>
+    <ul>
+      <li>Google may use the DoubleClick DART cookie to serve ads across the web</li>
+      <li>Ads shown may be based on your browsing history and interests</li>
+      <li>Google's use of advertising cookies enables it and its partners to serve ads based on your visit to our site and other sites on the internet</li>
+    </ul>
+    <p>You may opt out of personalised advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google Ads Settings</a> or by visiting <a href="https://www.aboutads.info" target="_blank" rel="noopener">aboutads.info</a>. You can also opt out via the <a href="https://www.networkadvertising.org/managing/opt_out.asp" target="_blank" rel="noopener">Network Advertising Initiative opt-out page</a>.</p>
+    <div class="warn-box">
+      <p>⚠ Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this website or other websites. Google's use of advertising cookies enables it and its partners to serve ads based on your visit to our site and/or other sites on the internet.</p>
+    </div>
+  </div>
+
+  <!-- 5. THIRD PARTY SERVICES -->
+  <div class="section-block">
+    <h2>5. THIRD-PARTY SERVICES</h2>
+    <p>We integrate with the following third-party services to provide our tools:</p>
+    <table class="data-table">
+      <thead><tr><th>SERVICE</th><th>PURPOSE</th><th>DATA SHARED</th><th>PRIVACY POLICY</th></tr></thead>
+      <tbody>
+        <tr><td>CoinGecko API</td><td>Live cryptocurrency price data</td><td>None (read-only API)</td><td><a href="https://www.coingecko.com/en/privacy" target="_blank" rel="noopener">View</a></td></tr>
+        <tr><td>Alternative.me API</td><td>Fear &amp; Greed Index data</td><td>None (read-only API)</td><td><a href="https://alternative.me/privacy" target="_blank" rel="noopener">View</a></td></tr>
+        <tr><td>Google AdSense</td><td>Advertising revenue</td><td>IP, cookies, browsing data</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">View</a></td></tr>
+        <tr><td>Google Analytics</td><td>Website traffic analysis</td><td>Anonymised usage data</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">View</a></td></tr>
+        <tr><td>Google Fonts</td><td>Typography rendering</td><td>IP address (logged briefly)</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">View</a></td></tr>
+      </tbody>
+    </table>
+    <p>These third-party services have their own privacy policies. We encourage you to review them. We are not responsible for the privacy practices of third-party services.</p>
+  </div>
+
+  <!-- 6. DATA SECURITY -->
+  <div class="section-block">
+    <h2>6. DATA SECURITY</h2>
+    <p>We implement industry-standard security measures to protect your information:</p>
+    <ul>
+      <li><strong>HTTPS / SSL Encryption</strong> — All data transmitted between your browser and our servers is encrypted using TLS (Transport Layer Security)</li>
+      <li><strong>No Server-Side Storage</strong> — Calculator inputs are processed client-side in your browser and never stored on our servers</li>
+      <li><strong>CDN Security</strong> — Our hosting infrastructure includes DDoS protection and edge security</li>
+    </ul>
+    <p>While we take reasonable precautions, no method of transmission over the internet is 100% secure. We cannot guarantee absolute security.</p>
+  </div>
+
+  <!-- 7. YOUR RIGHTS -->
+  <div class="section-block">
+    <h2>7. YOUR RIGHTS (GDPR &amp; CCPA)</h2>
+    <h3>For EU/EEA Users (GDPR)</h3>
+    <p>Under the General Data Protection Regulation, you have the right to:</p>
+    <ul>
+      <li><strong>Access</strong> — Request a copy of personal data we hold about you</li>
+      <li><strong>Rectification</strong> — Request correction of inaccurate data</li>
+      <li><strong>Erasure</strong> — Request deletion of your personal data</li>
+      <li><strong>Restriction</strong> — Request we limit processing of your data</li>
+      <li><strong>Portability</strong> — Request transfer of your data in a machine-readable format</li>
+      <li><strong>Object</strong> — Object to processing based on legitimate interests or direct marketing</li>
+    </ul>
+
+    <h3>For California Users (CCPA)</h3>
+    <p>Under the California Consumer Privacy Act, you have the right to:</p>
+    <ul>
+      <li>Know what personal information is collected about you</li>
+      <li>Know whether your personal information is sold or disclosed and to whom</li>
+      <li>Opt out of the sale of personal information</li>
+      <li>Access your personal information</li>
+      <li>Receive equal service and price, even if you exercise your privacy rights</li>
+    </ul>
+    <p>To exercise any of these rights, contact us at <a href="mailto:privacy@yourdomain.com">privacy@cryptocalcx.com</a>. We will respond within 30 days.</p>
+  </div>
+
+  <!-- 8. CHILDREN -->
+  <div class="section-block">
+    <h2>8. CHILDREN'S PRIVACY</h2>
+    <p>CRYPTOCALCX is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately at <a href="mailto:privacy@yourdomain.com">privacy@yourdomain.com</a> and we will take steps to delete such information.</p>
+  </div>
+
+  <!-- 9. CHANGES -->
+  <div class="section-block">
+    <h2>9. CHANGES TO THIS POLICY</h2>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. When we update the policy, we will revise the "Last Updated" date at the top of this page. We encourage you to review this policy periodically. Continued use of AETHER VAULT after any changes constitutes your acceptance of the updated policy.</p>
+  </div>
+
+  <!-- 10. CONTACT -->
+  <div class="section-block">
+    <h2>10. CONTACT US</h2>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
+    <div class="info-box">
+      <p><strong>CRYPTOCALCX</strong><br/>
+      Email: <a href="mailto:privacy@yourdomain.com">privacy@cryptocalcx.com</a><br/>
+      Website: <a href="https://yourdomain.com">cryptocalcx.com</a><br/>
+      Response Time: Within 5 business days</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">CRYPTOCALCX</div>
+  <div class="footer-links">
+    <a href="index.html">Dashboard</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="about.html">About</a>
+  </div>
+  <div class="footer-copy">© 2026 CRYPTOCALCX. ALL RIGHTS RESERVED.</div>
+</footer>
+
+</body>
+</html>

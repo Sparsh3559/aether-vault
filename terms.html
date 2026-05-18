@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Service | CryptoCalcX Crypto Intelligence Platform</title>
+
+    <meta name="description"
+        content="Terms of Service for CryptoCalcX. Read our terms governing use of our free crypto calculators, portfolio tracker, tax estimator, and mining profitability tools." />
+
+    <meta name="robots" content="index, follow" />
+
+    <link rel="canonical" href="https://cryptocalcx.vercel.app/terms.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #050508;
+            --bg2: #0a0b10;
+            --card: #111318;
+            --border: #1e2028;
+            --blue: #00d4ff;
+            --gold: #f0b90b;
+            --green: #00ff88;
+            --red: #ff3b3b;
+            --text: #e8eaf0;
+            --text2: #9ba3b8;
+            --text3: #5a6278;
+            --mono: 'Space Mono', monospace;
+            --head: 'Orbitron', sans-serif;
+            --body: 'Rajdhani', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--body);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--blue);
+            border-radius: 2px;
+        }
+
+        nav {
+            background: rgba(5, 5, 8, .97);
+            border-bottom: 1px solid var(--border);
+            padding: 0 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .nav-logo {
+            font-family: var(--head);
+            font-size: 16px;
+            font-weight: 900;
+            color: var(--gold);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .nav-back {
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--text2);
+            text-decoration: none;
+            border: 1px solid var(--border);
+            padding: 7px 16px;
+            border-radius: 3px;
+            transition: all .2s;
+            letter-spacing: 1px;
+        }
+
+        .nav-back:hover {
+            color: var(--blue);
+            border-color: var(--blue);
+        }
+
+        .page-hero {
+            padding: 64px 60px 48px;
+            border-bottom: 1px solid var(--border);
+            background: radial-gradient(ellipse at 50% 0%, rgba(240, 185, 11, .04) 0%, transparent 70%);
+        }
+
+        .page-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(240, 185, 11, .08);
+            border: 1px solid rgba(240, 185, 11, .2);
+            padding: 5px 14px;
+            border-radius: 2px;
+            font-family: var(--mono);
+            font-size: 10px;
+            color: var(--gold);
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .page-hero h1 {
+            font-family: var(--head);
+            font-size: clamp(24px, 3vw, 40px);
+            font-weight: 900;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        .page-hero h1 span {
+            color: var(--gold);
+        }
+
+        .page-meta {
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--text3);
+            letter-spacing: 1px;
+        }
+
+        .content-wrap {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px;
+        }
+
+        .section-block {
+            margin-bottom: 48px;
+        }
+
+        .section-block h2 {
+            font-family: var(--head);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-block p {
+            color: var(--text2);
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        .section-block ul {
+            color: var(--text2);
+            font-size: 16px;
+            line-height: 1.8;
+            padding-left: 20px;
+            margin-bottom: 14px;
+        }
+
+        .section-block ul li {
+            margin-bottom: 8px;
+        }
+
+        .section-block strong {
+            color: var(--text);
+        }
+
+        .info-box {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--blue);
+            padding: 20px 24px;
+            border-radius: 3px;
+            margin-bottom: 20px;
+        }
+
+        .warn-box {
+            background: rgba(255, 59, 59, .05);
+            border: 1px solid rgba(255, 59, 59, .2);
+            border-left: 3px solid var(--red);
+            padding: 20px 24px;
+            border-radius: 3px;
+            margin-bottom: 20px;
+        }
+
+        .gold-box {
+            background: rgba(240, 185, 11, .05);
+            border: 1px solid rgba(240, 185, 11, .2);
+            border-left: 3px solid var(--gold);
+            padding: 20px 24px;
+            border-radius: 3px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background: var(--bg2);
+            border-top: 1px solid var(--border);
+            padding: 32px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-logo {
+            font-family: var(--head);
+            font-size: 14px;
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--text3);
+            text-decoration: none;
+        }
+
+        .footer-copy {
+            font-family: var(--mono);
+            font-size: 10px;
+            color: var(--text3);
+        }
+
+        @media(max-width:768px) {
+            nav {
+                padding: 0 20px;
+            }
+
+            .page-hero {
+                padding: 40px 20px 32px;
+            }
+
+            .content-wrap {
+                padding: 32px 20px;
+            }
+
+            footer {
+                padding: 24px 20px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a class="nav-logo" href="index.html">CryptoCalcX</a>
+
+        <a class="nav-back" href="index.html">
+            ← BACK TO DASHBOARD
+        </a>
+    </nav>
+
+    <div class="page-hero">
+        <div class="page-badge">⬡ LEGAL DOCUMENT</div>
+
+        <h1>
+            Terms of <span>Service</span>
+        </h1>
+
+        <div class="page-meta">
+            Last Updated: May 2026 | Effective Date: May 2026
+        </div>
+    </div>
+
+    <div class="content-wrap">
+
+        <div class="warn-box">
+            <p>
+                ⚠ <strong>IMPORTANT:</strong>
+                Please read these Terms of Service carefully before using CryptoCalcX.
+                By accessing or using our platform, you agree to be bound by these terms.
+            </p>
+        </div>
+
+        <div class="section-block">
+            <h2>1. ACCEPTANCE OF TERMS</h2>
+
+            <p>
+                These Terms of Service govern your access to and use of the CryptoCalcX website located at
+                <strong>https://cryptocalcx.vercel.app</strong>.
+            </p>
+
+            <p>
+                By using this platform, you agree to comply with these Terms and our Privacy Policy.
+            </p>
+        </div>
+
+        <div class="section-block">
+            <h2>2. DESCRIPTION OF SERVICE</h2>
+
+            <p>
+                CryptoCalcX provides free cryptocurrency intelligence tools including:
+            </p>
+
+            <ul>
+                <li>Profit Simulators</li>
+                <li>Portfolio Trackers</li>
+                <li>Crypto Conversion Tools</li>
+                <li>Tax Estimators</li>
+                <li>Mining Profitability Calculators</li>
+                <li>Market Sentiment Analysis</li>
+            </ul>
+        </div>
+
+        <div class="section-block">
+            <h2>3. NOT FINANCIAL ADVICE</h2>
+
+            <div class="gold-box">
+                <p>
+                    ⚠ <strong>DISCLAIMER:</strong>
+                    CryptoCalcX is an informational platform only and does not provide investment, legal, or tax advice.
+                </p>
+            </div>
+
+            <p>
+                Cryptocurrency investments are highly volatile and risky. Always conduct independent research.
+            </p>
+        </div>
+
+        <div class="section-block">
+            <h2>4. ACCEPTABLE USE</h2>
+
+            <ul>
+                <li>Do not attempt to hack or disrupt the platform</li>
+                <li>Do not scrape data without permission</li>
+                <li>Do not misuse calculations for fraudulent purposes</li>
+                <li>Use the platform lawfully and responsibly</li>
+            </ul>
+        </div>
+
+        <div class="section-block">
+            <h2>5. THIRD-PARTY SERVICES</h2>
+
+            <p>
+                CryptoCalcX integrates third-party APIs including CoinGecko and Alternative.me for real-time crypto
+                data.
+            </p>
+
+            <p>
+                We do not guarantee absolute accuracy of third-party market data.
+            </p>
+        </div>
+
+        <div class="section-block">
+            <h2>6. ADVERTISING</h2>
+
+            <p>
+                CryptoCalcX displays advertisements through Google AdSense to support platform maintenance and
+                development.
+            </p>
+        </div>
+
+        <div class="section-block">
+            <h2>7. LIMITATION OF LIABILITY</h2>
+
+            <p>
+                CryptoCalcX shall not be liable for financial losses, trading losses, tax errors, or damages arising
+                from the use of this platform.
+            </p>
+        </div>
+
+        <div class="section-block">
+            <h2>8. CONTACT</h2>
+
+            <div class="info-box">
+                <p>
+                    <strong>CryptoCalcX</strong><br />
+                    Email:
+                    <a href="mailto:sparshh2003@gmail.com">
+                        sparshh2003@gmail.com
+                    </a><br />
+
+                    Website:
+                    <a href="https://cryptocalcx.vercel.app">
+                        cryptocalcx.vercel.app
+                    </a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+
+        <div class="footer-logo">
+            CryptoCalcX
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">Dashboard</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-copy">
+            © 2026 CryptoCalcX. ALL RIGHTS RESERVED.
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
