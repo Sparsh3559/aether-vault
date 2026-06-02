@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-<loc>https://cryptocalcx.vercel.app/</loc>
-</url>
+  <url>
+    <loc>https://cryptocalcx.vercel.app/</loc>
+  </url>
 
-<url>
-<loc>https://cryptocalcx.vercel.app/privacy</loc>
-</url>
+  <url>
+    <loc>https://cryptocalcx.vercel.app/privacy.html</loc>
+  </url>site
 
-<url>
-<loc>https://cryptocalcx.vercel.app/terms</loc>
-</url>
+  <url>
+    <loc>https://cryptocalcx.vercel.app/terms.html</loc>
+  </url>
 
-<url>
-<loc>https://cryptocalcx.vercel.app/about</loc>
-</url>
+  <url>
+    <loc>https://cryptocalcx.vercel.app/about.html</loc>
+  </url>
 
-<url>
-<loc>https://cryptocalcx.vercel.app/contact</loc>
-</url>
+  <url>
+    <loc>https://cryptocalcx.vercel.app/contact.html</loc>
+  </url>
 
-<url>
-<loc>https://cryptocalcx.vercel.app/calculators/dca-calculator</loc>
-</url>
+  <url>
+    <loc>https://cryptocalcx.vercel.app/calculators/dca-calculator</loc>
+  </url>
 
 </urlset>
